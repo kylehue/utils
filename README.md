@@ -19,6 +19,7 @@ npm i @kylehue/utils
 - [shapes.Rectangle](#shapesrectangle)
 - [shapes.Polygon](#shapespolygon)
 - [shapes.SAT](#shapessat)
+- [events](#events)
 
 ### clamp
 ```js
@@ -149,4 +150,26 @@ var polygon = new shapes.Polygon(5, 2, 10, 6);
 
 // Checks if the 2 shapes are colliding by using the Separating Axis Theorem
 var isColliding = shapes.SAT(circle, polygon);
+```
+### events
+```js
+// main.js
+const { events } = require("@kylehue/utils");
+
+events.on("test", num => {
+  console.log(num); // Prints 5 3x
+});
+
+events.once("test", num => {
+  console.log(num); // Prints 5 1x
+});
+```
+```js
+// otherFile.js
+const { events } = require("@kylehue/utils");
+
+events.setMaxListeners(200); // Set max listeners to 200 (default is 100)
+events.removeListener("name", "sample"); // Remove the listener named "sample"
+
+for (var i = 0; i < 3; i++) events.emit("test", 5);
 ```
