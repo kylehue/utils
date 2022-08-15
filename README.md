@@ -11,13 +11,14 @@ npm i @kylehue/utils
 - [lerp](#lerp)
 - [map](#map)
 - [random](#random)
-- [randomFromArray](#randomFromArray)
 - [uid](#uid)
-- [Vector](#Vector)
-- [shapes.Circle](#shapesCircle)
-- [shapes.Rectangle](#shapesRectangle)
-- [shapes.Polygon](#shapesPolygon)
-- [shapes.SAT](#shapesSAT)
+- [randomFromArray](#randomfromarray)
+- [uid](#uid)
+- [Vector](#vector)
+- [shapes.Circle](#shapescircle)
+- [shapes.Rectangle](#shapesrectangle)
+- [shapes.Polygon](#shapespolygon)
+- [shapes.SAT](#shapessat)
 
 ### clamp
 ```js
@@ -40,7 +41,8 @@ var position_B = {
   y: 77
 }
 
-var distance = dist(position_A.x, position_A.y, position_B.x, position_B.y); // Returns the distance of 2 vectors
+// Get the distance between 2 vectors
+var distance = dist(position_A.x, position_A.y, position_B.x, position_B.y);
 ```
 ### lerp
 ```js
@@ -56,26 +58,26 @@ const { map } = require("@kylehue/utils");
 
 var num = 5;
 var newNum = map(num, 0, 10, 2, 7); // Re-maps num from one range to another
-``````
+```
 ### random
 ```js
 const { random } = require("@kylehue/utils");
 
 var randomNumber = random(2, 5); // Get a random number that ranges from 2 to 5
-``````
+```
 ### randomFromArray
 ```js
 const { randomFromArray } = require("@kylehue/utils");
 
 var colors = ["blue", "red", "green"];
 var randomColor = randomFromArray(colors); // Get a random element from an array
-``````
+```
 ### uid
 ```js
 const { uid } = require("@kylehue/utils");
 
 var id = uid(); // Get a unique ID from the current session
-``````
+```
 ### Vector
 ```js
 const { Vector } = require("@kylehue/utils");
@@ -99,20 +101,31 @@ vector_A.copy(); // Creates a copy of vector_A
 vector_A.setMag(4); // Set the magnitude of vector_A to 4
 vector_A.getMag(); // Get the magnitude of vector_A
 vector_A.random2D(); // Randomize vector_A
-``````
+```
 ### shapes.Circle
 ```js
 const { shapes } = require("@kylehue/utils");
 
 var x = 40, y = 12, radius = 6;
 var circle = new shapes.Circle(x, y, radius); // Creates a circle object
-``````
+
+circle.setRadius(20); // Change the radius
+circle.scale(2, 2); // Double the size
+circle.translate(12, 54); // Change the position
+circle.rotate(Math.PI / 2) // Change the angle
+circle.updateVertices(); // Update vertices
+```
 ### shapes.Rectangle
 ```js
 const { shapes } = require("@kylehue/utils");
 
 var x = 60, y = 12, width = 20, height = 10;
 var rect = new shapes.Rectangle(x, y, width, height); // Creates a rectangle object
+
+rect.scale(2, 2); // Double the size
+rect.translate(12, 54); // Change the position
+rect.rotate(Math.PI / 2) // Change the angle
+rect.updateVertices(12, 14); // Change the size and update vertices
 ```
 ### shapes.Polygon
 ```js
@@ -120,6 +133,12 @@ const { shapes } = require("@kylehue/utils");
 
 var x = 80, y = 12, radius = 10, sides = 5;
 var polygon = new shapes.Polygon(x, y, radius, sides); // Creates a polygon object
+
+polygon.setRadius(20); // Change the radius
+polygon.scale(2, 2); // Double the size
+polygon.translate(12, 54); // Change the position
+polygon.rotate(Math.PI / 2) // Change the angle
+polygon.updateVertices(12); // Change the number of sides and update vertices
 ```
 ### shapes.SAT
 ```js
@@ -128,5 +147,6 @@ const { shapes } = require("@kylehue/utils");
 var circle = new shapes.Circle(3, 5, 20);
 var polygon = new shapes.Polygon(5, 2, 10, 6);
 
-var isColliding = shapes.SAT(circle, polygon); // Checks if the 2 shapes are colliding by using the Separating Axis Theorem
+// Checks if the 2 shapes are colliding by using the Separating Axis Theorem
+var isColliding = shapes.SAT(circle, polygon);
 ```
