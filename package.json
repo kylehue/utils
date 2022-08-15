@@ -1,6 +1,6 @@
 {
   "name": "@kylehue/utils",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Basic utilities for 2D Game Development.",
   "main": "index.js",
   "publishConfig": {
