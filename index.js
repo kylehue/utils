@@ -1,0 +1,21 @@
+const clamp = require("./lib/clamp.js");
+const dist = require("./lib/dist.js");
+const events = require("./lib/events.js");
+const lerp = require("./lib/lerp.js");
+const map = require("./lib/map.js");
+const random = require("./lib/random.js");
+const randomFromArray = require("./lib/randomFromArray.js");
+const shapes = require("./lib/shapes.js");
+const uid = require("./lib/uid.js");
+const Vector = require("./lib/Vector.js");
+
+module.exports.clamp = clamp;
+module.exports.dist = dist;
+module.exports.events = events;
+module.exports.lerp = lerp;
+module.exports.map = map;
+module.exports.random = random;
+module.exports.randomFromArray = randomFromArray;
+module.exports.shapes = shapes;
+module.exports.uid = uid;
+module.exports.Vector = Vector;

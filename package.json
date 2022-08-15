@@ -1,0 +1,29 @@
+{
+  "name": "@kylehue/utils",
+  "version": "1.0.0",
+  "description": "Basic utilities for 2D Game Development.",
+  "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kylehue/utils.git"
+  },
+  "author": "kylehue",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kylehue/utils/issues"
+  },
+  "homepage": "https://github.com/kylehue/utils#readme",
+  "files": [
+    "lib/",
+    "index.js"
+  ]
+}
