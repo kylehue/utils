@@ -1,6 +1,6 @@
 {
   "name": "@kylehue/utils",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Basic utilities for 2D Game Development.",
   "main": "index.js",
   "publishConfig": {
@@ -22,6 +22,10 @@
     "url": "https://github.com/kylehue/utils/issues"
   },
   "homepage": "https://github.com/kylehue/utils#readme",
+  "keywords": [
+    "utils",
+    "game development"
+  ],
   "files": [
     "lib/",
     "index.js"

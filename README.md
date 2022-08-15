@@ -32,18 +32,18 @@ num = clamp(num, 2, 12); // Limits num from 2 to 12
 ```js
 const { dist } = require("@kylehue/utils");
 
-var position_A = {
+var positionA = {
   x: 18,
   y: 53
 }
 
-var position_B = {
+var positionB = {
   x: 45,
   y: 77
 }
 
 // Get the distance between 2 vectors
-var distance = dist(position_A.x, position_A.y, position_B.x, position_B.y);
+var distance = dist(positionA.x, positionA.y, positionB.x, positionB.y);
 ```
 ### lerp
 ```js
@@ -83,25 +83,25 @@ var id = uid(); // Get a unique ID from the current session
 ```js
 const { Vector } = require("@kylehue/utils");
 
-var vector_A = new Vector(12, 5); // Creates a vector object
-var vector_B = new Vector({x: 4, y: 8});
+var vectorA = new Vector(12, 5); // Creates a vector object
+var vectorB = new Vector({x: 4, y: 8});
 
-vector_A.add(vector_B); // Add vector_B to vector_A
-vector_A.sub(vector_B); // Subtract vector_B to vector_A
-vector_A.mult(2); // Scale vector_A
-vector_A.div(2); // Divide vector_A
-vector_A.set(5, 9); // Set vector_A.x to 5 and vector_A.y to 9
-vector_A.reset(); // Set vector_A to 0
-vector_A.equals(vector_B); // Check if vector_A and vector_B is identical
-vector_A.limit(1); // Limit the magnitude of vector_A
-vector_A.lerp(vector_B); // Linear interpolation of vector_A to vector_B
-vector_A.dist(vector_B); // Get the distance between vector_A and vector_B
-vector_A.heading(vector_B); // Get the angle between vector_A and vector_B
-vector_A.norm(0, 0); // Normalize vector_A to length of 1
-vector_A.copy(); // Creates a copy of vector_A
-vector_A.setMag(4); // Set the magnitude of vector_A to 4
-vector_A.getMag(); // Get the magnitude of vector_A
-vector_A.random2D(); // Randomize vector_A
+vectorA.add(vectorB); // Add vectorB to vectorA
+vectorA.sub(vectorB); // Subtract vectorB to vectorA
+vectorA.mult(2); // Scale vectorA
+vectorA.div(2); // Divide vectorA
+vectorA.set(5, 9); // Set vectorA.x to 5 and vectorA.y to 9
+vectorA.reset(); // Set vectorA to 0, 0
+vectorA.equals(vectorB); // Check if vectorA and vectorB is identical
+vectorA.limit(1); // Limit the magnitude of vectorA to 1
+vectorA.lerp(vectorB, 0.1); // Linear interpolation of vectorA to vectorB
+vectorA.dist(vectorB); // Get the distance between vectorA and vectorB
+vectorA.heading(vectorB); // Get the angle between vectorA and vectorB
+vectorA.norm(); // Normalize vectorA to length of 1
+vectorA.copy(); // Creates a copy of vectorA
+vectorA.setMag(4); // Set the magnitude of vectorA to 4
+vectorA.getMag(); // Get the magnitude of vectorA
+vectorA.random2D(); // Randomize vectorA
 ```
 ### shapes.Circle
 ```js
@@ -113,7 +113,7 @@ var circle = new shapes.Circle(x, y, radius); // Creates a circle object
 circle.setRadius(20); // Change the radius
 circle.scale(2, 2); // Double the size
 circle.translate(12, 54); // Change the position
-circle.rotate(Math.PI / 2) // Change the angle
+circle.rotate(Math.PI / 2); // Change the angle
 circle.updateVertices(); // Update vertices
 ```
 ### shapes.Rectangle
@@ -125,7 +125,7 @@ var rect = new shapes.Rectangle(x, y, width, height); // Creates a rectangle obj
 
 rect.scale(2, 2); // Double the size
 rect.translate(12, 54); // Change the position
-rect.rotate(Math.PI / 2) // Change the angle
+rect.rotate(Math.PI / 2); // Change the angle
 rect.updateVertices(12, 14); // Change the size and update vertices
 ```
 ### shapes.Polygon
@@ -138,7 +138,7 @@ var polygon = new shapes.Polygon(x, y, radius, sides); // Creates a polygon obje
 polygon.setRadius(20); // Change the radius
 polygon.scale(2, 2); // Double the size
 polygon.translate(12, 54); // Change the position
-polygon.rotate(Math.PI / 2) // Change the angle
+polygon.rotate(Math.PI / 2); // Change the angle
 polygon.updateVertices(12); // Change the number of sides and update vertices
 ```
 ### shapes.SAT
